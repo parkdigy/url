@@ -1,0 +1,61 @@
+{
+  "name": "npm-template",
+  "title": "NPM Template Module",
+  "version": "1.0.0",
+  "description": "API Module",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkdigy/npm-template.git",
+    "baseUrl": "https://github.com/parkdigy/npm-template"
+  },
+  "bugs": {
+    "url": "https://github.com/parkdigy/npm-template/issues"
+  },
+  "homepage": "https://github.com/parkdigy/npm-template#readme",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "cd examples && npm run dev",
+    "build": "npm run test && npm run lint && rollup -c --bundleConfigAsCjs",
+    "pub": "npm i && npm run build && npm publish --access=public && rm ./.git/hooks/pre-commit",
+    "lint": "eslint './src/**/*.ts'",
+    "reinstall-module": "rm -rf node_modules && rm -f package-lock.json && npm i",
+    "test": "jest"
+  },
+  "author": "YOUNG CHUL PARK",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "util",
+    "typescript",
+    "javascript"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.29",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/parser": "^8.33.0",
+    "eslint": "9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "rollup": "^4.41.1",
+    "rollup-plugin-delete": "^2.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-jest": "^29.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.0"
+  }
+}
