@@ -1,6 +1,6 @@
 {
-  "name": "npm-template",
-  "title": "NPM Template Module",
+  "name": "@pdg/url",
+  "title": "Typescript URL Module",
   "version": "1.0.0",
   "description": "API Module",
   "type": "module",
@@ -9,13 +9,13 @@
   "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parkdigy/npm-template.git",
-    "baseUrl": "https://github.com/parkdigy/npm-template"
+    "url": "git+https://github.com/parkdigy/url.git",
+    "baseUrl": "https://github.com/parkdigy/url"
   },
   "bugs": {
-    "url": "https://github.com/parkdigy/npm-template/issues"
+    "url": "https://github.com/parkdigy/url/issues"
   },
-  "homepage": "https://github.com/parkdigy/npm-template#readme",
+  "homepage": "https://github.com/parkdigy/url#readme",
   "files": [
     "dist",
     "README.md"
