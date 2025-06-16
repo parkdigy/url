@@ -8,6 +8,7 @@ const config: Config = {
   testEnvironment: 'node',
   forceExit: true,
   detectOpenHandles: true,
+  moduleDirectories: ['node_modules'],
 };
 
 export default config;
