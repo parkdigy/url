@@ -4,9 +4,16 @@
   "version": "1.0.0",
   "description": "API Module",
   "type": "module",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/parkdigy/npm-template.git",
