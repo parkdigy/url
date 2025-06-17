@@ -30,9 +30,15 @@
   "scripts": {
     "dev": "cd examples && npm run dev",
     "build": "npm run test && npm run lint && rollup -c --bundleConfigAsCjs",
+    "git:commit": "node .git-commit.cjs",
+    "git:push": "git push",
+    "git:commit:push": "npm run git:commit && npm run git:push",
+    "git:merge:mirror": "node .git-merge.cjs mirror main",
+    "reset:gitignore": "git rm -r --cached . && git add .",
     "pub": "npm i && npm run build && npm publish --access=public && rm ./.git/hooks/pre-commit",
     "lint": "eslint './src/**/*.ts'",
-    "reinstall-module": "rm -rf node_modules && rm -f package-lock.json && npm i",
+    "reinstall": "npm run reinstall:module",
+    "reinstall:module": "rm -rf node_modules && rm -f package-lock.json && npm i",
     "test": "jest"
   },
   "author": "YOUNG CHUL PARK",
