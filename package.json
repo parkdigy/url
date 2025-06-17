@@ -1,8 +1,8 @@
 {
   "name": "@pdg/url",
   "title": "Typescript URL Module",
-  "version": "1.0.0",
-  "description": "API Module",
+  "description": "Typescript URL Module",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
