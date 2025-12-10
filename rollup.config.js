@@ -7,10 +7,6 @@ import fs from 'fs';
 import path from 'path';
 import packageJson from './package.json';
 
-const externalDeps = Object.keys(packageJson.dependencies || {}).concat(
-  Object.keys(packageJson.peerDependencies || {})
-);
-
 const getOutput = (path, format) => ({
   file: path,
   format: format,
@@ -22,7 +18,7 @@ const getOutput = (path, format) => ({
 const getConfig = () => ({
   input: 'src/index.ts',
   output: [getOutput(packageJson.main, 'cjs'), getOutput(packageJson.module, 'esm')],
-  external: externalDeps,
+  external: Object.keys(packageJson.dependencies || {}),
   context: 'window',
   plugins: [
     del({ targets: 'dist/*' }),

@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
+    "target": "Es2017",
+    "module": "ESNext",
+    "lib": ["ES2017"],
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
