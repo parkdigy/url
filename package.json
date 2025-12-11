@@ -2,7 +2,7 @@
   "name": "@pdg/url",
   "title": "Typescript URL Module",
   "description": "Typescript URL Module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -46,6 +46,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "keywords": [
+    "url",
     "util",
     "typescript",
     "javascript"
