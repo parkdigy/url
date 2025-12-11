@@ -9,9 +9,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "repository": {
@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "dev": "cd examples && npm run dev",
-    "build": "npm run test && npm run lint && rollup -c --bundleConfigAsCjs",
+    "watchman:del": "watchman watch-del \"${PWD}\" ; watchman watch-project \"${PWD}\"",
+    "build": "npm run watchman:del && npm run test && npm run lint && rollup -c --bundleConfigAsCjs",
     "git:commit": "node .git-commit.cjs",
     "git:push": "git push",
     "git:commit:push": "npm run git:commit && npm run git:push",
@@ -50,25 +51,24 @@
     "javascript"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.29",
-    "@types/uuid": "^10.0.0",
-    "@typescript-eslint/parser": "^8.33.0",
-    "eslint": "9.28.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.1",
-    "jest": "^29.7.0",
-    "prettier": "^3.5.3",
-    "rollup": "^4.41.1",
-    "rollup-plugin-delete": "^2.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "ts-jest": "^29.3.4",
-    "ts-node": "^10.9.2",
-    "typescript": "5.8.3",
-    "typescript-eslint": "^8.33.0"
+    "@eslint/js": "9.39.1",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@types/jest": "29.5.14",
+    "@types/node": "22.19.2",
+    "@typescript-eslint/parser": "8.49.0",
+    "eslint": "9.39.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "jest": "29.7.0",
+    "prettier": "3.7.4",
+    "rollup": "4.53.3",
+    "rollup-plugin-delete": "2.2.0",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "rollup-plugin-typescript2": "0.36.0",
+    "ts-jest": "29.4.6",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.49.0"
   }
 }

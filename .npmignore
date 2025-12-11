@@ -5,6 +5,8 @@ node_modules/
 /examples
 /src
 /test
+.git-commit.cjs
+.git-merge.cjs
 .gitignore
 .nvmrc
 .prettierignore

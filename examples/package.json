@@ -2,10 +2,11 @@
   "name": "examples",
   "scripts": {
     "dev": "tsx src/example.ts",
-    "reinstall-module": "rm -rf node_modules && rm -f package-lock.json && npm i"
+    "reinstall": "npm run reinstall:module",
+    "reinstall:module": "rm -rf node_modules && rm -f package-lock.json && npm i"
   },
   "devDependencies": {
-    "tsx": "^4.20.2",
-    "typescript": "5.8.3"
+    "tsx": "4.21.0",
+    "typescript": "5.9.3"
   }
 }
