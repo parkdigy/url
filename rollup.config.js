@@ -2,6 +2,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
+import eslint from '@rollup/plugin-eslint';
 import del from 'rollup-plugin-delete';
 import fs from 'fs';
 import path from 'path';
@@ -23,11 +24,17 @@ const getConfig = () => ({
   plugins: [
     del({ targets: 'dist/*' }),
     peerDepsExternal(),
-    resolve(),
+    eslint({
+      throwOnError: true,
+      throwOnWarning: true,
+      include: ['src/**'],
+      exclude: ['node_modules/**', 'dist/**', 'examples/**', 'test/**'],
+    }),
+    typescript({ useTsconfigDeclarationDir: true }),
+    resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }),
     commonjs({
       include: /node_modules/,
     }),
-    typescript({ useTsconfigDeclarationDir: true }),
     // *.private 디렉토리, *.private.d.ts 파일 제거
     {
       name: 'remove-d-ts-plugin',
@@ -43,7 +50,9 @@ const getConfig = () => ({
                 removeFromDir(filePath);
               }
             } else {
-              filePath.endsWith('.private.d.ts') && fs.unlinkSync(filePath);
+              if (filePath.endsWith('.private.d.ts')) {
+                fs.unlinkSync(filePath);
+              }
             }
           });
         };

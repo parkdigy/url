@@ -3,7 +3,7 @@ import type { Config } from 'jest';
 const config: Config = {
   verbose: false,
   transform: {
-    '^.+\\.(js|ts)$': 'ts-jest',
+    '^.+\\.(js|ts)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
   testEnvironment: 'node',
   forceExit: true,
@@ -11,4 +11,4 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
 };
 
-export default config;
+module.exports = config;

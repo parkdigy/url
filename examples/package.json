@@ -3,7 +3,12 @@
   "scripts": {
     "dev": "tsx src/example.ts",
     "reinstall": "npm run reinstall:module",
-    "reinstall:module": "rm -rf node_modules && rm -f package-lock.json && npm i"
+    "reinstall:module": "rm -rf node_modules && rm -f package-lock.json && npm i",
+    "build": "cd .. && npm run build",
+    "pub": "cd .. && npm run pub",
+    "git:commit": "cd .. && npm run git:commit",
+    "git:push": "cd .. && npm run git:push",
+    "git:commit:push": "cd .. && npm run git:commit:push"
   },
   "devDependencies": {
     "tsx": "4.21.0",
