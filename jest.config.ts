@@ -11,4 +11,4 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
 };
 
-module.exports = config;
+export default config;

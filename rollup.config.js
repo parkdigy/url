@@ -22,7 +22,7 @@ const getConfig = () => ({
   external: Object.keys(packageJson.dependencies || {}),
   context: 'window',
   plugins: [
-    del({ targets: 'dist/*' }),
+    (typeof del === 'function' ? del : del.default)({ targets: 'dist/*' }),
     peerDepsExternal(),
     eslint({
       throwOnError: true,
